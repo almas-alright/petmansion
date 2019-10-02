@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?m5yfs6');
+    src:    url('fonts/icomoon.eot?m5yfs6#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?m5yfs6') format('truetype'),
+        url('fonts/icomoon.woff?m5yfs6') format('woff'),
+        url('fonts/icomoon.svg?m5yfs6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calender:before {
+    content: "\e900";
+}
+.icon-cat:before {
+    content: "\e901";
+}
+.icon-day-care:before {
+    content: "\e902";
+}
+.icon-dog-boarding:before {
+    content: "\e903";
+}
+.icon-dog-walking:before {
+    content: "\e904";
+}
+.icon-home-visit:before {
+    content: "\e905";
+}
+.icon-house-sitting:before {
+    content: "\e906";
+}
+.icon-large-dog:before {
+    content: "\e907";
+}
+.icon-small-dog:before {
+    content: "\e908";
+}
+

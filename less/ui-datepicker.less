@@ -1,0 +1,221 @@
+.ui-datepicker {
+	 background-color: #fff;
+	 border: 1px solid @border-color;
+	 padding: 0 10px 10px;
+	 .border-radius(0);
+
+	 .ui-datepicker-header {
+	 	background: @white !important;
+	 	position: relative;
+	 	padding: 5px;
+	 	border: none;
+	 	border-bottom: 1px solid @border-color;
+	 	.border-radius(0);
+	 	margin-left: -10px;
+	 	margin-right: -10px;
+
+	 	a {
+	 		border: none;
+	 		width: 26px;
+	 		height: 26px;
+	 		&.ui-corner-all {
+	 			background: none !important;
+	 			border: ;
+	 			.border-radius(0);
+	 		}
+	 		&.ui-datepicker-prev, &.ui-datepicker-next {
+	 			top: 5px;
+	 			span {
+	 				margin-left: -12px;
+    				margin-top: -12px;
+	 			}
+	 		} 
+
+	 		&.ui-state-hover, &.ui-state-focus {
+	 			background: none !important;
+	 			border: none;
+	 		}
+
+	 		.ui-icon {
+	 			display: block;
+	 			width: 26px;
+	 			height: 26px;
+	 			background-repeat: no-repeat;
+	 			background-position: center;
+	 			background-size: 26px 26px;
+
+	 			&.ui-icon-circle-triangle-w {
+	 				background-image: url("../images/ios7-arrow-left.png");
+	 			}
+	 			&.ui-icon-circle-triangle-e {
+	 				background-image: url("../images/ios7-arrow-right.png");
+	 			}
+	 		}
+	 	}
+
+	 	.ui-datepicker-title {
+	 		text-align: center;
+	 	}
+	 }
+
+	 th {
+	 	border: 0;
+	    .bold;
+	    padding: 5px;
+	    text-align: center;
+	 }
+	 td {
+	 	padding: 0;
+    	span, a {
+    		border: 1px solid @border-color;;
+    		background: @white !important;
+    		color: @text-color;
+    		margin-left: -1px;
+    		margin-top: -1px;
+
+    		&.ui-state-default {
+    			&.ui-state-hover {
+    				position: relative;
+    				z-index: 2;
+    			}
+    		}
+    		&.ui-state-highlight {
+    			color: @brand-primary;
+    			border-color: @brand-primary;
+    			position: relative;
+    			z-index: 2;
+    		}
+    	}
+
+
+    	&.ui-state-disabled {
+    		color: @white !important;
+    		a,span {
+    			color: @white !important;
+    		}
+    	}
+    	&.ui-datepicker-today {
+    		border-color: @brand-primary !important;
+    		a {
+    			color: @brand-primary;
+    		}
+    	}
+    	&.dp-highlight {
+    		&.unavailable {
+    			&.disabled {
+    				.ui-state-default {
+    					pointer-events: none !important;
+    				}
+    			}
+    		}
+    	}
+	 }
+}
+
+.sitter-calendar {
+	.ui-datepicker {
+		width: 100%;
+		border: none;
+		.ui-datepicker-header {
+			margin-left: 0;
+	 		margin-right: 0;
+		}
+
+		td {
+			span, a {
+				padding: 0.5em;
+			}
+		}
+	}
+}
+
+
+
+
+.date-radio-hold {
+	.radio-styled {
+		display: inline-block;
+		margin-right: 10px;
+		border: 1px solid transparent;
+
+		&.available {
+			border-color: @brand-success;
+			color: @brand-success;
+			input[type="radio"]:checked + label::before {
+				color: @brand-success;
+			}
+		}
+		&.unavailable {
+			border-color: @brand-danger;
+			color: @brand-danger;
+			input[type="radio"]:checked + label::before {
+				color: @brand-danger;
+			}
+		}
+	}
+}
+.dp-highlight {
+/* 	.ui-state-default {
+	background-color: @brand-success !important;
+	border-color: darken(@brand-success, 10%) !important;
+	color: #fff;
+} */
+	/* &.available {
+		.ui-state-default {
+			background-color: @brand-success !important;
+			border-color: darken(@brand-success, 10%) !important;
+			color: #fff;
+		}
+	} */
+	&.unavailable {
+		.ui-state-default {
+			background-color: @brand-danger !important;
+			border-color: darken(@brand-danger, 10%) !important;
+			color: #fff;
+		}
+	}
+}
+
+#calendarPicked {
+	.ui-datepicker-calendar {
+		tbody {
+			tr {
+				td {
+					&:not(.ui-state-disabled) {
+						.ui-state-default {
+							background-color: @brand-success !important;
+							border-color: darken(@brand-success, 10%);
+							color: #fff;
+						}
+					}
+					&.dp-highlight {
+						&.unavailable {
+							.ui-state-default {
+								background-color: @brand-danger !important;
+								border-color: darken(@brand-danger, 10%) !important;
+								color: #fff;
+							}
+						}
+					}
+					&.ui-datepicker-today {
+						.ui-state-default {
+							&.ui-state-highlight {
+								color: @brand-primary !important;
+							}
+						}
+					}
+
+					&.ui-datepicker-unselectable {
+						&.ui-state-disabled {
+							&.dp-highlight {
+								&.unavailable {
+									display:none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

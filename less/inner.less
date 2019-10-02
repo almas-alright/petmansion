@@ -1,0 +1,310 @@
+.main-container {
+	min-height: 72%;
+}
+
+.panel {
+	&.panel-base {
+		border: none;
+		.panel-heading {
+			border-bottom: 1px solid @border-color;
+		}
+		.panel-footer {
+			border-color: @border-color;
+			background-color: @white-gray1;
+			h5 {
+				margin-top: 0;
+			}
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&.padd2x {
+		.panel-heading {
+			padding: 20px 30px;
+		}
+		.panel-body {
+			padding: 30px;
+		}
+		.panel-footer {
+			padding: 20px 30px;
+		}
+	}
+}
+
+.panel {
+	&.panel-log {
+		margin-top: 70px;
+	}
+}
+.alert {
+	+.panel-log {
+		margin-top: 20px;
+	}
+}
+
+
+.pages-heading {
+	.heading {
+		font-size: 30px;
+		margin: 0 0 30px;
+	}
+}
+.work-media {
+	background-color: @white;
+	padding: 20px;
+	margin-bottom: 30px;
+	.pre-heading {
+		background-color: @white-gray5;
+		margin-left: -20px;
+		margin-right: -20px;
+		margin-top: -20px;
+		margin-bottom: 20px;
+		padding: 20px;
+		.ph-title {
+			.semi;
+			font-size: 24px;
+			margin: 0 0 15px; 
+		}
+		.ph-sb-title {
+			.semi;
+			font-size: 18px;
+			margin: 0;
+		}
+	}
+	.wm-media {
+		max-width: 100%;
+		height: auto;
+	}
+	.wm-content {
+		
+	}
+}
+.me-panel {
+	margin-bottom: 40px;
+}
+
+.pt-media {
+	background-color: @white;
+	margin-bottom: 30px;
+	.pt-heading {
+		position: relative;
+		width: 100%;
+		background-color: @white;
+		.pt-avater, .pt-aname {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 15px;
+		}
+		.pt-avater {
+			img {
+				width: 75px;
+				height: 75px;
+				.border-radius(50%);
+			}
+		}
+		.pt-name {
+			.title {
+				margin-top: 0;
+			}
+		}
+	}
+	.pt-content {
+		.pt-image {
+			position: relative;
+			width: 100%;
+			/* padding-bottom: 100%; */
+			background: @white-gray5;
+			img {
+				/* position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				max-height: 100%; */
+				margin: auto;
+				max-width: 100%;
+				display: block;
+				vertical-align: middle;
+			}
+		}
+	}
+	.pt-footer {
+		padding: 15px;
+		background-color: @white;
+	}
+}
+
+.pt-info-panel {
+	background-color: @white;
+	margin-bottom: 30px;
+	.pt-heading {
+		background-color: @white-gray1;
+		border-bottom: 1px solid @border-color;
+		padding: 15px;
+		.title {
+			margin: 0;
+		}
+	}
+	.pt-content {
+		padding: 15px;
+		.pet-info-table {
+			position: relative;
+			margin: 0 0;
+			padding: 0;
+			list-style: none;
+			li {
+				width: 100%;
+				display: table;
+				position: relative;
+				&:nth-child(odd) {
+					background-color: @white-gray2;
+				}
+				> span {
+					display: table-cell;
+					vertical-align: middle;
+					width: 1%;
+					padding: 10px 15px;
+					&:last-child {
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-teaser {
+	&.teaser-page {
+		height: auto;
+		padding: 110px 0;
+		margin-top: 70px;
+	}
+}
+
+.feat-home-boarding {
+	padding: 0 0 70px;
+}
+.ft-heading {
+	font-size: 30px;
+	margin: 0 0 20px;
+}
+.fh-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		font-size: 22px;
+		position: relative;
+		padding: 5px 0;
+		&:before {
+			content: "\f00c ";
+			font-family: "FontAwesome";
+			color: @brand-success;
+			margin-right: 15px;
+		}
+	}
+}
+
+.brick {
+	padding: 60px 0;
+}
+.brick-petwalls {
+	background-color: @white;
+}
+.brick-pboarding {
+	background-color: @brand-primary;
+
+	.pboard-bar {
+		width: 100%;
+		position: relative;
+		.cell {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 15px;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+.brick-guarantee {
+	background-repeat: no-repeat;
+	background-position: center;
+	.cover;
+
+	.guarantee-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			font-size: 24px;
+			padding: 3px 0;
+			i {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+.wl-image {
+	text-align: center;
+	margin-bottom: 20px;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.brick-shost {
+	background-color: @white-gray5;
+}
+
+.host-card {
+	background-color: @white;
+	margin-bottom: 30px;
+	.cell {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 15px;
+
+		&.author {
+			padding-right: 0;
+			.aavate {
+				width: 75px;
+				height: 75px;
+				.border-radius(50%);
+				margin-bottom: 5px;
+			}
+			.name {
+				display: block;
+				margin-bottom: 4px;
+			}
+			.rating {
+				margin: 0 auto;
+			}
+			.reviews {
+				.opacity(0.7);
+			}
+		}
+
+		&.denote {
+			.title {
+				font-size: 18px;
+				margin: 0 0 10px;
+			}
+			address {
+				margin: 0 0 5px;
+				.bold;
+			}
+		}
+	}
+}
+
+.brick-helps {
+	
+}
