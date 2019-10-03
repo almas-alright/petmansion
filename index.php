@@ -37,7 +37,17 @@ global $redux_demo;
 
 <?php echo $redux_demo['bg-overlay-text'];
 
-echo do_shortcode('[register_form]');
+get_template_part('template-part/home');
+
+$cfposts = get_posts(array(
+    'post_type'     => 'wpcf7_contact_form',
+    'numberposts'   => -1
+));
+
+echo '<pre>';
+var_dump($cfposts);
+echo '</pre>';
+//echo do_shortcode('[register_form]');
 
 //pippin_registration_form_fields();
 

@@ -39,6 +39,7 @@ add_action('init', 'petman_menu');
 
 //supports
 add_theme_support('post-thumbnails');
+add_theme_support( 'title-tag' );
 add_image_size('slider-image', 1000, 400, true);
 
 function cut_limit($string, $words = 1) {
@@ -88,4 +89,5 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFram
 }
 
 require_once('inc/class-tgm-plugin-activation.php');
+require_once('inc/wp_bootstrap_navwalker.php');
 require_once('inc/install-plugins.php');
