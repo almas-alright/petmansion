@@ -39,7 +39,6 @@ global $redux_demo;
 
 get_template_part('template-part/home');
 
-mytheme_setup();
 
 
 //echo do_shortcode('[register_form]');

@@ -91,3 +91,4 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFram
 require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/wp_bootstrap_navwalker.php');
 require_once('inc/install-plugins.php');
+require_once('inc/pages.php');

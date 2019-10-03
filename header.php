@@ -54,8 +54,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-nav-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Register as Pet owner</a></li>
-                    <li><a href="#">Login</a></li>
                     <li class="be-sitter"><a href="sitter-login.html">Become a sitter</a></li>
                 </ul>
                 <?php
