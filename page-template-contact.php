@@ -17,11 +17,17 @@ global $redux_demo;
                     <address>
                         <?php echo $redux_demo['address-text']; ?>
                     </address>
-                    <p><a href=""><i class="fa fa-facebook"></i> Facebook</a></p>
-                    <p><a href=""><i class="fa fa-twitter"></i> Twitter</a></p>
-                    <p><a href=""><i class="fa fa-youtube"></i> Youtube</a></p>
-                    <p>Tel: 04 4512 0668</p>
-                    <p>Email: info@petmanion.com</p>
+                    <?php if($redux_demo['url-facebook'] != ''): ?>
+                    <p><a target="_blank" href="<?php echo $redux_demo['url-facebook']; ?>"><i class="fa fa-facebook"></i> Facebook</a></p>
+                    <?php endif; if($redux_demo['url-twitter'] != ''): ?>
+                    <p><a target="_blank" href="<?php echo $redux_demo['url-twitter']; ?>"><i class="fa fa-twitter"></i> Twitter</a></p>
+                    <?php endif; if($redux_demo['url-youtube'] != ''): ?>
+                    <p><a target="_blank" href="<?php echo $redux_demo['url-youtube']; ?>"><i class="fa fa-youtube"></i> Youtube</a></p>
+                    <?php endif; if($redux_demo['contact-number'] != ''): ?>
+                    <p><?php echo $redux_demo['contact-number']; ?></p>
+                    <?php endif; if($redux_demo['contact-email'] != ''): ?>
+                    <p><?php echo $redux_demo['contact-email']; ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="col-sm-8">
                     <div class="pages-heading">
