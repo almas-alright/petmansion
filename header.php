@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <img src="<?php print IMG; ?>logo.png" alt="Petmansion">
                 </a>
             </div>
