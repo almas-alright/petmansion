@@ -25,34 +25,79 @@ get_header();
                     <div class="pages-heading">
                         <h1 class="heading">Contact</h1>
                     </div>
-                    <form action="" class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <label for="">Your name </label>
-                                <input type="text" class="form-control" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <label for="">Your e-mail address  </label>
-                                <input type="email" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12"><label for="">Subject</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12"><label for="">Message</label>
-                                <textarea name="" id="" rows="4" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary">Send Message</button>
-                    </form>
+                    <?php
+                    global $redux_demo;
+                     if($redux_demo['cf-opt-select'] != ''):
+                         echo do_shortcode('[contact-form-7 id="'.$redux_demo['cf-opt-select'].'"]');
+                    ?>
+                     <?php else : ?>
+                     <?php if(is_user_logged_in()) : ?>
+                         <h2>Check PM Option and select a contact form </h2>
+                            <p>to create your contact form you can use codes as below</p>
+                    <textarea readonly rows="12" cols="70">
+                             <div class="form-horizontal">
+                                 <div class="form-group">
+                                     <div class="col-sm-12">
+                                         <label for="">Your name </label>
+                                         [text* your-name class:form-control]
+
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-sm-12">
+                                         <label for="">Your e-mail address </label>
+                                         [email* your-email class:form-control]
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-sm-12">
+                                         <label for="">Subject</label>
+                                         [text* your-subject class:form-control]
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-sm-12">
+                                         <label for="">Message</label>
+                                         [textarea your-message class:form-control]
+                                     </div>
+                                 </div>
+                                 [submit class:classform-control "Send Message"]
+                             </div>
+                    </textarea>
+                     <?php else : ?>
+                             <h2>Sorry You cant contact us at this moment, please come back later</h2>
+                     <?php endif; ?>
+
+<!--                         <form action="" class="form-horizontal">-->
+<!--                             <div class="form-group">-->
+<!--                                 <div class="col-sm-12">-->
+<!--                                     <label for="">Your name </label>-->
+<!--                                     <input type="text" class="form-control" placeholder="">-->
+<!--                                 </div>-->
+<!--                             </div>-->
+<!--                             <div class="form-group">-->
+<!--                                 <div class="col-sm-12">-->
+<!--                                     <label for="">Your e-mail address  </label>-->
+<!--                                     <input type="email" class="form-control">-->
+<!--                                 </div>-->
+<!--                             </div>-->
+<!--                             <div class="form-group">-->
+<!--                                 <div class="col-sm-12"><label for="">Subject</label>-->
+<!--                                     <input type="text" class="form-control">-->
+<!--                                 </div>-->
+<!--                             </div>-->
+<!--                             <div class="form-group">-->
+<!--                                 <div class="col-sm-12"><label for="">Message</label>-->
+<!--                                     <textarea name="" id="" rows="4" class="form-control"></textarea>-->
+<!--                                 </div>-->
+<!--                             </div>-->
+<!--                             <button class="btn btn-primary">Send Message</button>-->
+<!--                         </form>-->
+                     <?php endif; ?>
                 </div>
             </div>
         </div>
     </section>
 <?php
 get_footer();
+
