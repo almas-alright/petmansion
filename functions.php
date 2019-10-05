@@ -48,32 +48,9 @@ function cut_limit($string, $words = 1) {
     return implode(' ', array_slice(explode(' ', $string), 0, $words));
 }
 
-
-
 //optimizing image while upload
 //https://wordpress.stackexchange.com/questions/224536/how-to-reduce-original-image-quality-on-upload
-add_filter( 'wp_generate_attachment_metadata', function( $metadata, $attachment_id )
-{
-    $file = get_attached_file( $attachment_id );
-    $type = get_post_mime_type( $attachment_id );
 
-    // Target jpeg images
-    if( in_array( $type, [ 'image/jpg', 'image/jpeg', 'image/png' ] ) )
-    {
-        // Check for a valid image editor
-        $editor = wp_get_image_editor( $file );
-        if( ! is_wp_error( $editor ) )
-        {
-            // Set the new image quality
-            $result = $editor->set_quality( 20 );
-
-            // Re-save the original image file
-            if( ! is_wp_error( $result ) )
-                $editor->save( $file );
-        }
-    }
-    return $metadata;
-}, 10, 2 );
 
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' ) ) {
@@ -92,3 +69,59 @@ require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/wp_bootstrap_navwalker.php');
 require_once('inc/install-plugins.php');
 require_once('inc/pages.php');
+
+
+/* Add .png to allowed WP MIME types */
+function custom_upload_mimes( $existing_mimes=array() ) {
+    // add png to the list of mime types
+    $existing_mimes['png'] = 'image/png';
+
+    // return the array back to the function with our added mime type
+    return $existing_mimes;
+}
+add_filter( 'upload_mimes', 'custom_upload_mimes' );
+
+
+add_filter( 'wp_generate_attachment_metadata', function( $metadata, $attachment_id )
+{
+    Redux::init('redux_demo');
+    global $redux_demo;
+//    echo $redux_demo['opt-image-quality']; exit;
+    $file = get_attached_file( $attachment_id );
+    $type = get_post_mime_type( $attachment_id );
+
+    // Target jpeg images
+    if( in_array( $type, [ 'image/jpg', 'image/jpeg', 'image/png' ] ) )
+    {
+        // Check for a valid image editor
+        $editor = wp_get_image_editor( $file );
+        if( ! is_wp_error( $editor ) )
+        {
+            // Set the new image quality
+            $result = $editor->set_quality( $redux_demo['opt-image-quality']);
+
+            // Re-save the original image file
+            if( ! is_wp_error( $result ) )
+                $editor->save( $file );
+        }
+    }
+    return $metadata;
+}, 10, 2 );
+
+function compress($source, $destination, $quality) {
+
+    $info = getimagesize($source);
+
+    if ($info['mime'] == 'image/jpeg')
+        $image = imagecreatefromjpeg($source);
+
+    elseif ($info['mime'] == 'image/gif')
+        $image = imagecreatefromgif($source);
+
+    elseif ($info['mime'] == 'image/png')
+        $image = imagecreatefrompng($source);
+
+    imagejpeg($image, $destination, $quality);
+
+    return $destination;
+}
