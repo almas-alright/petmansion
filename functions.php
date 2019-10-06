@@ -69,6 +69,7 @@ require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/wp_bootstrap_navwalker.php');
 require_once('inc/install-plugins.php');
 require_once('inc/pages.php');
+require_once('inc/my-pet.php');
 
 
 /* Add .png to allowed WP MIME types */
