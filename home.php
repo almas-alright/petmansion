@@ -37,7 +37,7 @@ global $redux_demo;
 
 <?php echo $redux_demo['bg-overlay-text'];
 
-get_template_part('template-part/home');
+get_template_part('template-part/home-body');
 
 
 
